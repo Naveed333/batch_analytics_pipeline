@@ -4,7 +4,7 @@ CREATE TABLE fact_user_actions (
   user_id STRING,
   content_id STRING,
   action STRING,
-  timestamp TIMESTAMP,
+  timestamp TIMESTAMP,   -- Converted to TIMESTAMP type
   device STRING,
   region STRING,
   session_id STRING,
@@ -15,7 +15,7 @@ CREATE TABLE fact_user_actions (
 )
 STORED AS PARQUET;
 
--- Dimension Table for Content Metadata
+-- Dimension Table for Content Metadata (Using Parquet format)
 CREATE TABLE dim_content (
   content_id STRING,
   title STRING,

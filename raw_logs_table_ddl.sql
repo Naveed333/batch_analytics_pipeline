@@ -4,7 +4,7 @@ CREATE EXTERNAL TABLE raw_user_logs (
   user_id STRING,
   content_id STRING,
   action STRING,
-  timestamp STRING,
+  timestamp STRING,   -- Timestamp stored as STRING, will be converted during transformation
   device STRING,
   region STRING,
   session_id STRING
@@ -15,7 +15,7 @@ FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION '/raw/logs';
 
--- Raw Content Metadata Table
+-- Raw Content Metadata Table (Partitioned by Year, Month, Day)
 CREATE EXTERNAL TABLE raw_content_metadata (
   content_id STRING,
   title STRING,
